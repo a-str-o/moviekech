@@ -13,7 +13,6 @@ class Header extends Component {
     }
     
     render(){
-        console.log(this.state.clicked)
         return (
             <nav className="NavbarItems">
                 <ReactLogo />
