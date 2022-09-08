@@ -67,7 +67,12 @@
     border-radius: 20px;
     margin-right: 1rem;
 }
-
+.season {
+    cursor: pointer;
+}
+.season:hover {
+    background-color: red;
+}
 
 .movie__detailRightBottom {
     margin: 2rem 0;

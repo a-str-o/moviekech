@@ -5,20 +5,22 @@ import { useParams } from "react-router-dom"
 const Serie = () => {
     const [currentMovieDetail, setMovie] = useState()
     const { id } = useParams()
-
-    useEffect(() => {
-        getData()
-        window.scrollTo(0,0)
-    }, [])
-
+ 
     const getData = () => {
         fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=6b3cfd1c595cc8994c09d12fa15da5e5&language=en-US`)
         .then(res => res.json())
         .then(data => setMovie(data))
     }
 
+    useEffect(() => {
+        getData()
+        window.scrollTo(0,0)
+    }, [getData])
+
+   
+
     return (
-        <div className="movie">
+        <div className="movie" key={id}>
             <div className="movie__intro">
                 <img className="movie__backdrop" src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.backdrop_path : ""}`} />
             </div>

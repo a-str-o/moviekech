@@ -5,7 +5,10 @@
     flex-direction:column;
     align-items: center;
 }
-
+.watch {
+    width: 80%;
+    margin-bottom: 80px;
+}
 .movie__intro {
     width: 80%;
 }
@@ -142,4 +145,35 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+
+
+.iframe-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16x9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+.watch {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+
+}
+
+@media screen and (max-width: 4740px) {
+
 }
