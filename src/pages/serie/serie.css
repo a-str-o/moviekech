@@ -64,7 +64,7 @@
 .movie__genre {
     padding: .5rem;
     border: 2px solid white;
-    border-radius: 20px;
+    border-radius: 8px;
     margin-right: 1rem;
 }
 .season {

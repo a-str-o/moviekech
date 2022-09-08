@@ -71,7 +71,7 @@ const Serie = () => {
                             {
                                 currentMovieDetail && currentMovieDetail?.seasons
                                 ? 
-                                   Array( currentMovieDetail.next_episode_to_air.season_number === numberSe ? (currentMovieDetail.next_episode_to_air.episode_number - 1) : 
+                                   Array( currentMovieDetail.next_episode_to_air?.season_number === numberSe ? (currentMovieDetail.next_episode_to_air.episode_number - 1) : 
                                    currentMovieDetail?.seasons[numberSe].episode_count).fill(null).map((item, idx) => 
                                    (
                                        <>

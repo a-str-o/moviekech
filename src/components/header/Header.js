@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import "./Header.css";
 // import { Link } from "react-router-dom"
 import { ReactComponent as ReactLogo } from './image/MovieKech-1.svg';
-import { render } from "@testing-library/react";
 import { MenuData } from "./MenuData";
-
+import { Link } from "react-router-dom";
 
 class Header extends Component {
     state = {clicked: false};
@@ -15,7 +14,10 @@ class Header extends Component {
     render(){
         return (
             <nav className="NavbarItems">
-                <ReactLogo />
+                <Link to="/">
+                    <ReactLogo />
+                </Link>
+                
                 <div className="menu-icons" onClick={this.handleClick}>
                     <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
                 </div>
