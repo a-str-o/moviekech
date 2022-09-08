@@ -7,13 +7,13 @@ export const MenuData = [
     },
     {
         title: "Movies",
-        url:"",
+        url:"/movies/popular",
         cName:"nav-links",
         icon:"fa-solid fa-film"
     },
     {
         title: "series",
-        url:"",
+        url:"/series/popular",
         cName:"nav-links",
         icon:"fa-solid fa-tv"
     },  {

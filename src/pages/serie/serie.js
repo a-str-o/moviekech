@@ -61,7 +61,7 @@ const Serie = () => {
                                 currentMovieDetail && currentMovieDetail?.number_of_seasons
                                 ? 
                                    Array(currentMovieDetail?.number_of_seasons).fill(null).map((item, idx) => (
-                                        <span className="movie__genre season" key={idx} onClick={() => setnumberSe(idx + 1)}>season {idx + 1}</span>
+                                        <span className="movie__genre season" key={idx} onClick={() => setnumberSe(idx + 1)} style={{backgroundColor : numberSe === (idx + 1) ? '#DA8255' : 'transparent'}}>season {idx + 1}</span>
                                     ))
                                 : 
                                 null
@@ -71,8 +71,16 @@ const Serie = () => {
                             {
                                 currentMovieDetail && currentMovieDetail?.seasons
                                 ? 
-                                   Array( currentMovieDetail.next_episode_to_air.season_number === numberSe ? (currentMovieDetail.next_episode_to_air.episode_number - 1) : currentMovieDetail?.seasons[numberSe].episode_count).fill(null).map((item, idx) => (
-                                    <span className="movie__genre season" key={idx} onClick={() => setNumberEp(idx + 1)}>ep{idx + 1}</span>
+                                   Array( currentMovieDetail.next_episode_to_air.season_number === numberSe ? (currentMovieDetail.next_episode_to_air.episode_number - 1) : 
+                                   currentMovieDetail?.seasons[numberSe].episode_count).fill(null).map((item, idx) => 
+                                   (
+                                       <>
+                                       <span className="movie__genre season" key={idx} onClick={() => setNumberEp(idx + 1)} style={{backgroundColor : numberEp === (idx + 1) ? '#DA8255' : 'transparent'}}>
+                                        ep{idx + 1}
+                                        </span>
+                                        {(idx>9 && idx % 10 === 0) ? <br/> : null}
+                                       </>
+                                    
                                     ))
                                 : 
                                 null
@@ -81,7 +89,6 @@ const Serie = () => {
                     
                 </div>
             </div>
-            <div className="movie__name">{'season' + numberSe + '-' + 'ep' +numberEp}</div>
 
            <div className="watch">
             <iframe  id="ifr" src={`https://v2.vidsrc.me/embed/${id}/${numberSe + '-' + numberEp}`} width="80%" height="700" frameborder="0" allowfullscreen="true" />

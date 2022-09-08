@@ -18,8 +18,8 @@ function App() {
                 <Route path="movie/:id" element={<Movie />}></Route>
                 <Route path="movies/:type" element={<MovieList />}></Route>
 
-                <Route path="tv/:id" element={<Serie />}></Route>
-                <Route path="tv/:type" element={<SerieList />}></Route>
+                <Route path="serie/:id" element={<Serie />}></Route>
+                <Route path="series/:type" element={<SerieList />}></Route>
 
                 <Route path="/*" element={<h1>Error Page</h1>}></Route>
             </Routes>

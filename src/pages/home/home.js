@@ -48,19 +48,9 @@ const Home = () => {
                         ))
                     }
                 </Carousel>
-                <div className="buttons">
-                <button onClick={() => {
-                    setType("movie")
-                }}>movies</button>
-                <button onClick={() => {
-                    setType("tv")
-                }}>tv show</button>
+                <div className="buttons"> 
+                    <MovieList />
                 </div>
-                {
-                    type === "movie"
-                    ? <MovieList />
-                    : <SerieList />
-                }
             </div>
         </>
     )
